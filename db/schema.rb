@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_02_202751) do
+ActiveRecord::Schema.define(version: 2018_09_02_204022) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +33,15 @@ ActiveRecord::Schema.define(version: 2018_09_02_202751) do
     t.text "tags"
     t.string "image"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "emal"
+    t.string "password_hash"
+    t.string "password_salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
