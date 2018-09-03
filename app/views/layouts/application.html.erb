@@ -39,24 +39,24 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8" >
+           <!--Alerts & Messages-->
+           <% if flash[:notice]%>
+            <div class="alert alert-success"><%= flash[:notice] %></div>
+           <% end %>
+           <% if flash[:alert]%>
+            <div class="alert alert-danger"><%= flash[:alert] %></div>
+           <% end %>
             <%= yield %>
           </div>
           <div class="col-md-4" >
-            <div class="list-group">
-              <a href="#" class="list-group-item">News</a>
-              <a href="#" class="list-group-item">Tutorials</a>
-              <a href="#" class="list-group-item">Releases</a>
-              <a href="#" class="list-group-item">Events</a>
-            </div>
+           <%= render 'partials/sidebar'%>
 
             </div>
         </div>
 
       </div>
     </section>
-    <footer>
-      <p>Copyright &copy; 2018, rBlog | <a href="login.html">Admin Login</a></a></p>
-    </footer>
+   <%= render 'partials/footer'%>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
