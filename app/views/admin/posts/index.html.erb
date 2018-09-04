@@ -18,7 +18,8 @@
          'btn btn-danger', method: :delete, data: {confirm: 'Are you shure'}%></td>
       </tr>
     <% end %>
-     </table>
+  </table>
+  <%= will_paginate @posts %>
   <% else %>
       <p>There are no posts</p>
   <% end %>
