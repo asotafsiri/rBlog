@@ -30,12 +30,7 @@
             <a class="nav-link"><%= link_to "Users", admin_users_path%></a>
           </li>
         </ul>
-       <%= form_tag(admin_posts_path, :method => "get", id:"search-form", class:"search-form pull-right") do %>
-        <div class="form-group">
-         <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class:'form-control'%>
-        </div>
-        <%= submit_tag "Search", :name => nil, class:'btn btn-primary'%>
-       <% end %>
+         <%= render 'partials/admin/search' %>
       </div>
     </nav>
     <section>

@@ -3,7 +3,11 @@
 # module/class Admin::CategoriesController
 class Admin::CategoriesController < Admin::ApplicationController
   def index
-    @categories = Category.all
+    if params[:search]
+      @categories = Category.search(params[:search]).all.order('created_at DESC')
+    else
+      @categories = Category.all.order('created_at DESC')
+    end
   end
 
   def new

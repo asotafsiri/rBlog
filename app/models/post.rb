@@ -12,5 +12,4 @@ class Post < ApplicationRecord
   def self.search(query)
     where("title like ? OR body like ?", "%#{query}%", "%#{query}%")
   end
-
 end
