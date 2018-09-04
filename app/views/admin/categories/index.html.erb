@@ -1,8 +1,9 @@
- <h2 class="page-header">Manage Categories <%= link_to "Create New", new_admin_category_path, class:'btn btn-primary pull-right'%>Add New</a></h2>
+ <h2 class="page-header">Manage Categories <%= link_to "Create New", new_admin_category_path, class:'btn btn-success pull-right'%></h2>
+  <% if @categories.exists? %>
    <table class="table table-striped">
       <tr>
         <th>Category Title</th>
-        <th>Create Date</th>
+        <th>Date Created</th>
         <th>Actions</th>
       </tr>
     <% @categories.each do |category|%>
@@ -15,3 +16,6 @@
       </tr>
     <% end %>
      </table>
+   <% else %>
+      <p>There are no posts</p>
+    <% end %>
