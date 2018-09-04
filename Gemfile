@@ -66,3 +66,4 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'mail_form'
 gem 'simple_form'
 gem 'will_paginate', '~> 3.0'
+gem "paperclip", "~> 6.0.0"
