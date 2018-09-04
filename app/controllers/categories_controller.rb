@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
+# class CategoriesController
 class CategoriesController < ApplicationController
-  def show
-  end
+  def show; end
 end

@@ -1,6 +1,13 @@
+# frozen_string_literal: true
+
+# Admin/post Controller
 class Admin::PostsController < Admin::ApplicationController
   def index
-    @posts = Post.all
+    if params[:search]
+     @posts = Post.search(params[:search]).all.order('created_at DESC')
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   def new
@@ -36,10 +43,11 @@ class Admin::PostsController < Admin::ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = 'Post Removed'
-      redirect_to admin_posts_path
-
+    redirect_to admin_posts_path
   end
+
   private
+
   def post_params
     params.require(:post).permit(:title, :category_id, :user_id, :tags, :image, :body)
   end

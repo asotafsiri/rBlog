@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# class Admin/UserController
 class Admin::UsersController < Admin::ApplicationController
   def index
     @users = User.all
@@ -36,10 +39,11 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = 'User Removed'
-      redirect_to admin_users_path
-
+    redirect_to admin_users_path
   end
+
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end

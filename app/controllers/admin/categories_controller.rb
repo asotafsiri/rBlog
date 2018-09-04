@@ -39,10 +39,11 @@ class Admin::CategoriesController < Admin::ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     flash[:notice] = 'Category Removed'
-      redirect_to admin_categories_path
-
+    redirect_to admin_categories_path
   end
+
   private
+
   def category_params
     params.require(:category).permit(:name)
   end
