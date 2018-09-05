@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'contacts/create'
   get 'about' => 'about#index'
   namespace :admin do
-    get 'sessions/new'
+    get "login" => "sessions#new", :as => "login"
     get 'sessions/create'
   end
   namespace :admin do
