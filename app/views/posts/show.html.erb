@@ -3,5 +3,5 @@
    <small>Posted by <%= @post.user.name %> on <%= @post.created_at.to_time.strftime('%B %e at %l:%M %p')%>
    </small>
    <%= image_tag @post.image.url,width:'100%'%>
-   <%= @post.body %>
+   <%= raw @post.body %>
 </div>
