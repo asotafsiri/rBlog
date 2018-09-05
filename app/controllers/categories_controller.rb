@@ -2,5 +2,9 @@
 
 # class CategoriesController
 class CategoriesController < ApplicationController
-  def show; end
+  def show
+    @category = Category.find(params[:id])
+    @categories = Category.all
+    @posts = @category.posts
+  end
 end
