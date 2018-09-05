@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order('created_at DESC').paginate(:per_page => 2, :page => params[:page])
     end
-  @categories = Category.all
+    @categories = Category.all
   end
 
   def show

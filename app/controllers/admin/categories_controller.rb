@@ -2,6 +2,7 @@
 
 # module/class Admin::CategoriesController
 class Admin::CategoriesController < Admin::ApplicationController
+  before_action :verify_logged_in
   def index
     if params[:search]
       @categories = Category.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 2, :page => params[:page])

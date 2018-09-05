@@ -9,8 +9,10 @@ class CommentsController < ApplicationController
     flash[:notice] = 'Comment Added'
     redirect_to post_path(@post)
   end
- private
- def comment_params
-  params.require(:comment).permit(:name, :email, :body, :post_id)
- end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:name, :email, :body, :post_id)
+  end
 end

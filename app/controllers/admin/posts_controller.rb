@@ -2,6 +2,7 @@
 
 # Admin/post Controller
 class Admin::PostsController < Admin::ApplicationController
+  before_action :verify_logged_in
   def index
     if params[:search]
       @posts = Post.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 2, :page => params[:page])
